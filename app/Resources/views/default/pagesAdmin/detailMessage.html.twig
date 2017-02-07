@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    </head>
+    <body>
+        
+         
+            <div class="container-fluid thumbnail">
+                
+                    <div class="   col-md-offset-2 col-md-8">
+                        {% for message in messages %}
+                        <h1>De {{message.mail}}</h1>
+                        <h6>objet</h6>
+                        <h4>{{message.objet}}</h4>
+                        <h6>message</h6>
+                        <h4>{{message.message}}</h4>
+                        <div class="btnDetailMess">
+                            <a href="{{path("getMessage")}}" class="btn btn-primary">Retour</a>
+                            <a  class="btn btn-success" href="{{path('repMessage',{'mail':message.mail})}}">Repondre</a>
+                            <a class="btn btn-danger">Supr</a>
+                        </div>
+                        {% endfor %}
+                    </div>
+               
+            </div>
+        
+        <style>
+            .btnDetailMess{
+                float: right;
+            }
+        </style>
+        <script src={{ asset("../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js")}}></script>
+        <script src={{ asset("../vendor/twbs/bootstrap/dist/js/bootstrap.min.js")}}></script>
+    </body>
+</html>

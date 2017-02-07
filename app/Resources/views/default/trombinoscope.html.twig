@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('../web/css/main.css') }}" >
+        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta charset="UTF-8" />
+        <title>{% block title %}BeWeb{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+</head>
+<header>
+    
+</header>
+<body>
+    {% block body %}
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav text-center">
+        <li class="active col-md-6"><a href="{{path('home')}}">Retour au site</a></li>
+        <li class="col-md-6"><a href="{{path('homePromo')}}">Retour aux promotions</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+       
+      </ul>
+    </div>
+</nav>
+   {# <div class="ecole border">
+        <h2>Formulaire de Recherche</h2>
+    </div>#}
+    <div class="container-fluid ecole margin">
+        <div class="modifMarging border">
+        <section>
+            <h2>Lunel</h2>
+        </section>
+        </div>
+        <div class="container promo  border">
+        {% for apprennent in apprennents %}
+            
+                <div class ="col-xs-3 modifPadding">
+                    <ul>
+                        <li><img src="http://40.media.tumblr.com/022bbb45b3257c3c494a1de93179bd8a/tumblr_n45cr8dmj61ty0km0o7_1280.png" class="img-responsive"></li>
+                        <li>{{apprennent.nom}}</li>
+                        <li>{{apprennent.prenom}}</li>
+                        <li>{{apprennent.mail}}</li>
+                    </ul>
+                </div>
+            
+      {#Test scss#} <style type="text/css"> .back{background-color: red} {#.promo{background-color: gold; }#}</style>
+   
+            {% endfor %}
+       </div>
+    </div>
+        <footer>Copyright FondesierreRH</footer>
+    
+    {% endblock %}
+</body>

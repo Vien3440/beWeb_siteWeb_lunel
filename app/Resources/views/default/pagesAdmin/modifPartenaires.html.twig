@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('cssAdmin/mainAdmin.css') }}" >
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+
+        <meta charset="UTF-8" />
+        <title>{% block title %}BeWeb{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+
+
+</head>
+<header>
+
+</header>
+<body>
+</body>
+</html>
+
+
+<div>
+
+    {{form_start(formParte,{'attr':{'action':path('updateParte')}})}} {#Methode pour valider #}
+
+    <div class="container">
+        <div class="col-lg-offset-2 col-lg-8 col-lg-offset-2">
+            
+                <div class="input-group" >
+                    <span class="input-group-addon" >Nom</span>
+
+                    {{ form_widget(formParte.nom, { 'attr': {'class': 'form-control'} })}}
+                </div>
+
+
+                <div class="input-group">
+                    <span class="input-group-addon" >Logo</span>
+                    {{ form_widget(formParte.logo, { 'attr': {'class': 'form-control'} })}}
+                </div>
+
+
+                <div class="input-group">
+                    <span class="input-group-addon " >Url</span>
+                    {{ form_widget(formParte.url, { 'attr': {'class': 'form-control'} })}}
+                </div>
+
+
+                {{form_end(formParte)}}
+            </div>
+        </div>
+    
+</div>

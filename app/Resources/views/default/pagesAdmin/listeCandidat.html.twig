@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    </head>
+    <body>
+        <section class="container">
+        <h1>Candidature</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                       {# <th>prenom</th>#}
+                        <th>mai</th>
+                        {#<th>newsletter</th>#}
+                       {# <th>Envoi formulaire</th>#}
+                    </tr>
+                </thead>
+                {% for candidat in candidats %}
+                    <tr>   
+                {#        <th>{{ candidat.prenom }}</th>#}
+                        <th>{{ candidat.mail }}</th>
+                      {#  {% if  candidat.newsletter == 1 %}
+                        <th>Oui</th>
+                        {% else %}
+                         <th>Non</th>
+                         {% endif %}#}
+                        {#<th><button type="button" class="btn btn-info">envoi</button></th>#}
+                    </tr>
+                {% endfor %}
+            </table>
+            
+        </section>
+        <style>
+            h1{
+                text-align: center;
+            }
+             tr > th {
+                text-align: center;
+            }
+            
+        </style>
+         <a href="{{path("homeAdmin")}}" class="btn btn-primary">Retour</a>        </section>
+
+        <script src={{ asset("../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js")}}></script>
+        <script src={{ asset("../vendor/twbs/bootstrap/dist/js/bootstrap.min.js")}}></script>
+    </body>
+</html>

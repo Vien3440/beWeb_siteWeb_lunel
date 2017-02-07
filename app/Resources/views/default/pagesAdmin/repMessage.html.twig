@@ -1,0 +1,35 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    </head>
+    <body>
+
+
+        <div class="container thumbnail">
+        <h2>Reponse a : {{ mail }}</h2>
+        <div class="   col-md-offset-2 col-md-8">
+                {{ form_start(formRep)}}
+                {{ form_widget(formRep.objet, { 'attr': {'class': 'form-control'}}) }}
+                {{ form_widget(formRep.message, { 'attr': {'class': 'form-control'}}) }}
+                {{ form_widget(formRep.Valider, { 'attr': {'class': 'form-control btn-success'}}) }}
+    </div>    
+        <a href="{{path("getMessage")}}" class="btn btn-primary">Retour</a>
+            </div>
+
+
+       
+        <script src={{ asset("../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js")}}></script>
+        <script src={{ asset("../vendor/twbs/bootstrap/dist/js/bootstrap.min.js")}}></script>
+    </body>
+</html>
+
+
+

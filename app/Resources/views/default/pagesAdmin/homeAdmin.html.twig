@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+
+        <meta charset="UTF-8" />
+        <title>{% block title %}BeWeb{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+</head>
+<header>
+
+</header>
+<body>
+
+    {% block body %}
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="">
+                        <img alt="Logo" src="http://simplon.co/wp-content/uploads/2016/02/Capture-d%E2%80%99e%CC%81cran-2016-02-10-a%CC%80-11.21.20.png"  class="" height="30">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="monBlog"><a href="{{url('home')}}">Retour site</a></li>
+                        <li class="dropdown">  
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button">Boite de reception<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ url('getMessage')}}">Mail</a></li>
+                                <li  class="divider"></li>
+                                <li><a href="{{ url('getCandidat')}}">Candidature</a></li>
+                            </ul>
+                        </li>
+                        {# Dropdown Rubrique Evènements #}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Modifier site<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ url('formNew')}}">New</a></li>
+                                <li><a href="{{ url('modifTexte', { id: '1'}) }}">Ecole</a></li>
+                                <li><a href="{{ url('modifTexte', { id: '2'}) }}"> Concept</a></li>
+                                <li><a href="{{ url('modifParte')}}"> Partenaires</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Promotion<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                 <li><a href={{path('createPromotion')}}>Création</a></li>
+                            </ul>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+                            <section class="container-fluid">
+                                <img class=" col-sm-offset-3 col-sm-6 img-responsive" src="http://simplon.co/wp-content/uploads/2016/02/Capture-d%E2%80%99e%CC%81cran-2016-02-10-a%CC%80-11.21.20.png">
+                            </section>
+     
+    {% endblock %}
+
+{% block javascripts %}{% endblock %}
+<script src="../../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js"></script>
+<script src="../../vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

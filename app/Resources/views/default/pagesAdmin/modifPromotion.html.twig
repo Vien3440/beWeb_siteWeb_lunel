@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('cssAdmin/mainAdmin.css') }}" >
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+
+        <meta charset="UTF-8" />
+        <title>{% block title %}BeWeb{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+
+
+</head>
+<header>
+
+</header>
+<body>
+</body>
+</html>
+
+
+<div>
+
+    {{form_start(formPromos,{'attr':{'action':path('updatePromos')}})}} {#Methde pour valide #}
+
+    <div class="container">
+        <div class="col-lg-offset-2 col-lg-8 col-lg-offset-2">
+            
+                <div class="input-group" >
+                    <span class="input-group-addon" >Numéro</span>
+
+                    {{ form_widget(formPromos.numero, { 'attr': {'class': 'form-control'} })}}
+                </div>
+                
+                <div class="input-group" >
+                    <span class="input-group-addon" >Ville</span>
+
+                    {{ form_widget(formPromos.fkville, { 'attr': {'class': 'form-control'} })}}
+                </div>
+                
+                <div class="input-group" >
+                    <span class="input-group-addon" >Date début</span>
+
+                    {{ form_widget(formPromos.datedebut, { 'attr': {'class': 'form-control'} })}}
+                </div>
+                
+                <div class="input-group" >
+                    <span class="input-group-addon" >Date fin</span>
+
+                    {{ form_widget(formPromos.datefin, { 'attr': {'class': 'form-control'} })}}
+                </div>
+
+
+                <div class="input-group">
+                    <span class="input-group-addon" >Image</span>
+                    {{ form_widget(formPromos.image, { 'attr': {'class': 'form-control'} })}}
+                </div>
+
+                {{form_end(formPromos)}}
+            </div>
+        </div>
+    
+</div>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('../web/css/main.css') }}" >
+        <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        
+        <meta charset="UTF-8" />
+        <title>{% block title %}BeWeb{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+</head>
+<header>
+    
+</header>
+<body>
+    {% block body %}
+        
+        
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav text-center">
+        <li class="active col-md-4"><a href={{path('home')}}>Retour au site</a></li>
+        <li class="col-md-4"><a href="#">Lunel</a></li>
+        <li class="col-md-4"><a href="#">Bézier</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+       
+      </ul>
+    </div>
+</nav>
+       
+        <div class="container-fluid ecole">
+           <div class="modifMarging border">
+                <section>
+                    <h2>Lunel</h2>
+                </section>
+           </div>
+          {#  Boucle for pour pouvoir cibler chaque instance de notre entity  #} 
+             {% for promolulu in promosLunel %}
+                 <div class="promo modifMarging border">
+                     <a href="{{path('tronbiPromo',{'id':promolulu.id})}}">
+                        <div class="entetePromo">
+                               
+                            {# Recup le num de promotion #}
+                                <p>Promotion {{promolulu.numero}}</p>
+                                <div class="promoDate">
+                                        <p>{{promolulu.datedebut|date('d/m/y-')}}</p>
+                                        <p>{{promolulu.datefin|date('d/m/y')}}</p>
+                                </div>
+                        </div>
+                                {#image mis en dure en atenden la methode fini #}
+                        <img class="img-responsive imagePromo"   src="http://www.lunel.com/sites/default/files/ressources/dsc_0013_0.jpg">
+                     
+                     </a>
+                 </div>
+             {% endfor %}
+        </div>  
+        
+        
+        <div class="container-fluid ecole">
+            <div class="modifMarging border">
+                <section>
+                    <h2>Béziers</h2>
+                </section>
+            </div>
+                {#  Boucle for pour pouvoir cibler chaque instance de notre entity  #} 
+             {% for promobeziers in promosBeziers %}
+                 <div class="promo">
+                     <a href="{{path('tronbiPromo',{'id':promobeziers.id})}}">
+                        <div class="entetePromo">
+                                {# Recup le num de promotion #}
+                                <p>Promotion {{promobeziers.numero}}</p>
+                                <div class="promoDate">
+                                        <p>{{promobeziers.datedebut|date('d/m/y-')}}</p>
+                                        <p>{{promobeziers.datefin|date('d/m/y')}}</p>
+                                </div>
+                        </div>
+                                {#image mise en dure en attendant la methode finie #}
+                        <img class="img-responsive imagePromo"   src="http://cdn.deguisetoi.fr/images/rep_art/gra/239/9/239934/deguisement-de-groupe-bebe-tele-adultes_239934.jpg">
+                     </a>
+                 </div>
+             {% endfor %}
+            </div>
+        </div>
+        <style>
+            .imagePromo{
+                padding: 30px
+            }
+        </style>
+        
+         <footer>Copyright FondesierreRH</footer>
+    {% endblock %}
+</body>

@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    </head>
+    <body>
+        <section class="container">
+        <h1>Mes message</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>mail</th>
+                        <th>objet</th>
+                     {#   <th>statut</th>#}
+                       
+                    </tr>
+                </thead>
+                {% for message in messages %}
+                    <tr  name="{{ message.id }}">   
+                        <th >{{ message.mail }}</th>
+                        <th>{{ message.objet }}</th>
+                        {#<th>{{ message.statut }}</th> #}                    
+                        <th>
+                            <button  class="btn btn-info"><a  href="{{path('detailMessage',{'id':message.id})}}">Voir +</a></button>
+                            <button  name="{{ message.id }}" type="button" class="btn btn-danger btnSuprMess"><a >Supr</a></button>
+                        </th>
+                    </tr>
+                {% endfor %}
+            </table>
+ <a href="{{path("homeAdmin")}}" class="btn btn-primary">Retour</a>        </section>
+        <style>
+            h1{
+                text-align: center;
+            }
+             tr > th {
+                text-align: center;
+            }
+         
+            
+        </style>
+        <script src={{ asset("../vendor/twbs/bootstrap/js/tests/vendor/jquery.min.js")}}></script>
+        <script src={{ asset("../vendor/twbs/bootstrap/dist/js/bootstrap.min.js")}}></script>
+        <script src={{ asset("js/scriptAdmin.js")}}></script>
+    </body>
+</html>

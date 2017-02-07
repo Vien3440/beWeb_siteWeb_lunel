@@ -1,0 +1,69 @@
+
+
+    
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ asset('../vendor/twbs/bootstrap/dist/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('cssAdmin/mainAdmin.css') }}" >
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        <meta charset="UTF-8" />
+        <title>{% block title %}BeWeb{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+
+
+</head>
+<header>
+
+</header>
+<body>
+
+
+       
+    <div class="titre-connexion">
+        <h1>Connexion</h1>
+    </div>
+    <div class="imagelogin">
+
+        <div class="content-connexion">
+            {#Champ pour mettre l'email#}
+            <form action="{{path('loginCheck',{}) }}" method="post">
+                <div class="form-group">
+                    <label for="inputEmail" class="col-xs-12 control-label"></label>
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1">
+                        <div class="input-group">
+                            <span class="input-group-addon">Nom User</span>
+                            <input type="text" name="_username" placeholder="Nom d'utilisateur" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                {#Champ pour mettre le mot de passe#}
+
+                <div class="form-group">
+                    <label for="inputPassword" class="col-xs-12 control-label"></label>
+                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1">
+                        <div class="input-group">
+                            <span class="input-group-addon">Mots de passe</span>
+                            <input type="password" name="_password" placeholder="Mot de passe" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+                {#Bouton connexion#}
+
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1">
+                    <div class="form-group">
+                        <div class="boutonConnexion">
+                            <input type="submit" class="btn btn-default" value="connexion" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</body>
+</html>
