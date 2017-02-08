@@ -5,16 +5,31 @@ and open the template in the editor.
 */
 /* 
     Created on : 19 janv. 2017, 11:51:18
-    Author     : ludovic-castro
+   
 */
 
-h2 {
-  font-family: "test";
-  text-align: left;
+ .landing{
+    margin-top: 100px;
 }
+
+body{
+  
+    font-family: $police;
+}
+
+.conteHeader{
+    padding: 100px;
+    background-color: #563d7c;
+    
+}
+
+.logoContacte{
+    
+}
+
+
 section {
     text-align: center;
-    /*background-color: #009999;*/
     
 }
 
@@ -28,12 +43,12 @@ ul{
 /*    margin-bottom:  20px;*/
 }
 h2{
-    margin: 0px;
-    background-color: #C60800;
+    text-align: left;
+    background-color: #B69796;
     font-size: 50px;
     font-family: $policetitre;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    padding: 5px;
+
 }
 .navbar{
     margin-bottom: 0px;
@@ -48,10 +63,6 @@ h2{
   
 }
 
-body{
-    background-color: $font-color;
-    font-family: $police;
-}
 
 footer{
     text-align: center;
@@ -87,8 +98,7 @@ footer{
 
 .texte{
     text-align: justify;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+
 }
 
 .visibilyty{

@@ -21,10 +21,10 @@
         {#/////////////Implémentation Carouselle Des New////////////////////////////#}
 
 
-    {#<div id="myCarousel" class="carousel slide" data-ride="carousel">
-           
+        <div id="myCarousel" class="carousel-inner"  data-ride="carousel">
+
             <div class="carousel-inner  " data-ride="carousel" role="listbox">
-                {% for new in news[0:] %}
+                {% for new in news %}
 
                     <div class="item{%if loop.index == 1%} active {%endif%}">
                         <img src="{{asset('upload/news/')~new.images}}">
@@ -42,11 +42,11 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            </div>#}
-        
+        </div>
+
 
         {# ////// Bare de navigation #}
-        <nav class="navbar navbar-inverse ">
+        <nav class="navbar-fixed-top navbar-inverse  ">
 
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -65,14 +65,26 @@
                     <li class="col-md-2"><a href="#contact">Contact</a></li>
                     <li class="col-md-2"><a href="{{path('homePromo')}}">Promos</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-
-                </ul>
             </div>
         </nav>
+        <header class="conteHeader container-fluid">
+            <h1 class="col-xs-6 col-xs-offset-6" >BE WEB FORMATION DE DEVLOPEUR WEB </h1>
+            <ul class="col-xs-6 col-xs-offset-6">
+                <li>By Simplon / paule emploi  ;) </li>
+                <li></li>
+                <li></li>
+            </ul>
+        </header>
+        <style>
+
+        </style>
         {# ////// Section Ecole #}
-        <div class="container-fluid ecole margin">
-            <div class="border">
+        <div class="container-fluid landing ecole ">
+            <div class="logoContacte">
+                <img src="{{asset('css/img/facebook-logo.png')}}">
+                <img src="{{asset('css/img/twitter-logo.png')}}">
+            </div>
+            <div class="col-xs-offset-4">
                 <section id="ecole">
                     {% for annonceText in sectionText %}
                         <h2> {% if ( annonceText.classe  == "ecole" ) %} {{annonceText.titre}} {% endif %} </h2>
@@ -90,8 +102,8 @@
             </div>
         </div>
         {# ////// Section Concept #}
-        <div class="container-fluid margin">
-            <div class="border">
+        <div class="container-fluid landing">
+            <div class="col-xs-offset-4">
                 <section id="concept">
 
                     {% for annonceText in sectionText %}
@@ -111,45 +123,45 @@
             </div> 
         </div>
         {# ////// Section Partenaires #}
-        <div class="container-fluid margin">
-            <div class="border">
-            <section id="partenaires">
-                <h2>Partenaires</h2>
-                {% for annonceText in sectionText %}
+        <div class="container-fluid landing">
+            <div class="col-xs-offset-4">
+                <section id="partenaires">
+                    <h2>Partenaires</h2>
+                    {% for annonceText in sectionText %}
 
-                {% endfor %}
-            </section>
-            <div class="texteHome">
+                    {% endfor %}
                 </section>
-            <div class="texteHome">
+
+
+
                 </section>
-            <div class="texteHome">
-                <section class="paddingPartenaire couleur">
-                    <p class="paragraphe"> 
+                <div class="texteHome">
+                    <section class="paddingPartenaire couleur">
+                        <p class="paragraphe"> 
 
-                    <div class="row">
-                        {% for partenaire in parte %}
-                            <div class="col-sm-6 col-md-2">
-                                <div class="thumbnail">
-                                    <img src="{{asset('upload/partenaire/')~partenaire.logo}}" alt="...">
-                                    <div class="caption">
-                                        <h3>{{partenaire.nom}}</h3>
+                        <div class="row">
+                            {% for partenaire in parte %}
+                                <div class="col-lg-3 col-md-2">
+                                    <div class="thumbnail">
+                                        <img src="{{asset('upload/partenaire/')~partenaire.logo}}" alt="...">
+                                        <div class="caption">
+                                            <h3>{{partenaire.nom}}</h3>
 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </section>
+                            {% endfor %}
+                        </div>
+                    </section>
                 </div>
+
+
             </div>
-        </div>
-        </div>
         </div>
         {# ////// Section Inscription #}
 
         {# ////// Test style #}
-      
+
         {#  ////// Popup#}
         <div class="thumbnail insctrip col-xs-offset-3 col-xs-6">
             <p>Votre demande de candidature est en cours de traitement </p>
@@ -161,8 +173,8 @@
             <button class="btnClose" type="button" class="btn btn-success">Fermer</button>
         </div>
         {#  ////// Debut Section#}
-        <div class="container-fluid margin">
-            <div class="border">
+        <div class="container-fluid landing">
+            <div class="col-xs-offset-4">
                 <section id="inscription">              
                     <h2> Inscription </h2>
                 </section>
@@ -189,30 +201,25 @@
             </div>
         </div>
         {#///////Contacter nous#} 
-        <div class="container-fluid margin">
-            <div class="border">
-                <section id="contact">
-                    <h2>Contacter Nous</h2>
-                    <div class="texteHome">
-                        <div class="input-group col-xs-offset-2 col-xs-8 positionform">   
-                            <input id="mailConta" type="email" class="form-control" name="newLetter" placeholder="Email" data-fv-emailaddress-message="The value is not a valid email address">
-                            <input id="objConta" type="text" class="form-control" name="newLetter" placeholder="Objet" data-fv-emailaddress-message="The value is not a valid email address">
-                            <textarea id="messConta" type="text" class="form-control" name="newLetter" placeholder="Texte" data-fv-emailaddress-message="The value is not a valid email address"></textarea>
-                            <button id="validationConta" type="button" class="btn btn-secondary">Validation</button>
-                        </div>
+        <div class="container-fluid ">
+
+            <section id="contact">
+                <h2>Contacter Nous</h2>
+                <div class="texteHome">
+                    <div class="input-group col-xs-offset-2 col-xs-8 positionform">   
+                        <input id="mailConta" type="email" class="form-control" name="newLetter" placeholder="Email" data-fv-emailaddress-message="The value is not a valid email address">
+                        <input id="objConta" type="text" class="form-control" name="newLetter" placeholder="Objet" data-fv-emailaddress-message="The value is not a valid email address">
+                        <textarea id="messConta" type="text" class="form-control" name="newLetter" placeholder="Texte" data-fv-emailaddress-message="The value is not a valid email address"></textarea>
+                        <button id="validationConta" type="button" class="btn btn-secondary">Validation</button>
                     </div>
-                </section>
-            </div>
+                </div>
+            </section>
+
         </div>
 
+
         <footer>Copyright FondesierreRH</footer>
-        <style>
-            .paddingPartenaire{
-                padding-left: 30px;
-                padding-right: 30px;
-            }
-           
-        </style>
+
 
     {% endblock %}
 
